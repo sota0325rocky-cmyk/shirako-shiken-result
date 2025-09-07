@@ -2,63 +2,98 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>試験合格発表</title>
+  <title>第15回 ○○試験 合格発表</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
+    /* --- 全体のデザイン --- */
     body {
-      font-family: "Hiragino Kaku Gothic Pro", Meiryo, sans-serif;
-      background: linear-gradient(135deg, #f0f4ff, #d9e2ff);
       margin: 0;
-      padding: 0;
-      text-align: center;
+      font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+      color: #222;
+      background: linear-gradient(120deg, #e0eafc, #cfdef3);
+      background-attachment: fixed;
     }
+
     header {
-      background: #1e3c72;
+      background: linear-gradient(90deg, #1e3c72, #2a5298);
       color: white;
-      padding: 20px;
+      padding: 30px 15px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
-    h1 {
+
+    header h1 {
       margin: 0;
-      font-size: 2em;
-      letter-spacing: 0.1em;
+      font-size: 2.2em;
+      letter-spacing: 0.15em;
+      font-weight: bold;
     }
-    .container {
-      margin: 40px auto;
-      max-width: 600px;
-      background: white;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    }
-    .notice {
-      color: #444;
+
+    .sub {
+      margin-top: 8px;
       font-size: 1.1em;
-      margin-bottom: 20px;
+      opacity: 0.9;
     }
+
+    /* --- メインコンテンツ --- */
+    .container {
+      max-width: 700px;
+      margin: 40px auto;
+      background: white;
+      padding: 40px 25px;
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .notice {
+      font-size: 1.2em;
+      margin-bottom: 25px;
+      border-left: 5px solid #1e3c72;
+      padding-left: 12px;
+      color: #333;
+    }
+
     ul {
       list-style: none;
       padding: 0;
     }
+
     li {
-      padding: 12px;
-      margin: 8px 0;
-      background: #f7faff;
-      border: 1px solid #ccd9ff;
-      border-radius: 6px;
-      font-size: 1.2em;
+      padding: 15px;
+      margin: 10px 0;
+      background: #f2f6ff;
+      border: 1px solid #c9d8ff;
+      border-radius: 8px;
+      font-size: 1.3em;
       font-weight: bold;
       color: #1e3c72;
+      transition: transform 0.2s, background 0.2s;
     }
+
+    li:hover {
+      transform: scale(1.02);
+      background: #eaf0ff;
+    }
+
     footer {
-      margin: 30px 0;
+      text-align: center;
+      margin: 40px 0 20px;
       font-size: 0.9em;
-      color: #666;
+      color: #555;
+    }
+
+    /* --- アニメーション --- */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
   <header>
     <h1>第15回 ○○試験 合格発表</h1>
+    <div class="sub">2025年3月8日 公表</div>
   </header>
 
   <div class="container" id="content" style="display:none;">
@@ -68,22 +103,25 @@
       <li>1003</li>
       <li>1007</li>
       <li>1012</li>
+      <li>1020</li>
+      <li>1023</li>
     </ul>
   </div>
 
   <footer>
-    <p>&copy; 2025 合格発表委員会</p>
+    <p>&copy; 2025 ○○試験運営委員会</p>
   </footer>
 
   <script>
-    // シンプルなパスワード認証
-    const pass = "exam2025"; // ←好きなパスワードに設定
+    // --- シンプルなパスワード認証 ---
+    const pass = "exam2025"; // ←ここで自由に設定
     const input = prompt("パスワードを入力してください：");
     if (input === pass) {
       document.getElementById("content").style.display = "block";
     } else {
-      document.body.innerHTML = "<h2 style='margin-top:50px;'>アクセスが拒否されました</h2>";
+      document.body.innerHTML = "<h2 style='margin-top:50px; text-align:center;'>アクセスが拒否されました</h2>";
     }
   </script>
 </body>
 </html>
+
