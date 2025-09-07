@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>試験合格発表</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: "Hiragino Kaku Gothic Pro", Meiryo, sans-serif;
+      background: linear-gradient(135deg, #f0f4ff, #d9e2ff);
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    header {
+      background: #1e3c72;
+      color: white;
+      padding: 20px;
+    }
+    h1 {
+      margin: 0;
+      font-size: 2em;
+      letter-spacing: 0.1em;
+    }
+    .container {
+      margin: 40px auto;
+      max-width: 600px;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    .notice {
+      color: #444;
+      font-size: 1.1em;
+      margin-bottom: 20px;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      padding: 12px;
+      margin: 8px 0;
+      background: #f7faff;
+      border: 1px solid #ccd9ff;
+      border-radius: 6px;
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #1e3c72;
+    }
+    footer {
+      margin: 30px 0;
+      font-size: 0.9em;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>第15回 ○○試験 合格発表</h1>
+  </header>
+
+  <div class="container" id="content" style="display:none;">
+    <p class="notice">以下の受験番号の方が合格となりました。</p>
+    <ul>
+      <li>1001</li>
+      <li>1003</li>
+      <li>1007</li>
+      <li>1012</li>
+    </ul>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 合格発表委員会</p>
+  </footer>
+
+  <script>
+    // シンプルなパスワード認証
+    const pass = "exam2025"; // ←好きなパスワードに設定
+    const input = prompt("パスワードを入力してください：");
+    if (input === pass) {
+      document.getElementById("content").style.display = "block";
+    } else {
+      document.body.innerHTML = "<h2 style='margin-top:50px;'>アクセスが拒否されました</h2>";
+    }
+  </script>
+</body>
+</html>
